@@ -1,3 +1,4 @@
+require('babel-register');
 const webpack = require('webpack');
 const fs      = require('fs');
 const path    = require('path'),
@@ -10,7 +11,9 @@ const modules = join(root, 'node_modules');
 const dest    = join(root, 'dist');
 const NODE_ENV = process.env.NODE_ENV;
 const isDev = NODE_ENV === 'development';
+const isTest = NODE_ENV === 'test';
 const cssModulesNames = `${isDev ? '[path][name]__[local]__' : ''}[hash:base64:5]`;
+
 
 var config = getConfig({
   isDev: isDev,
@@ -24,6 +27,10 @@ config.postcss = [].concat([
   require('autoprefixer')({}),
   require('cssnano')({})
 ])
+
+config.externals = {
+  'react/addons': true
+}
 
 const matchCssLoaders = /(^|!)(css-loader)($|!)/;
 const findLoader = (loaders, match) => {
@@ -77,5 +84,24 @@ const defines =
 config.plugins = [
   new webpack.DefinePlugin(defines)
 ].concat(config.plugins);
+
+
+if (isTest) {
+  config.externals = {
+    'react/lib/ReactContext': true,
+    'react/lib/ExecutionEnvironment': true
+  }
+
+  config.plugins = config.plugins.filter(p => {
+    const name = p.constructor.toString();
+    const fnName = name.match(/^function (.*)\((.*\))/)
+
+    const idx = [
+      'DedupePlugin',
+      'UglifyJsPlugin'
+    ].indexOf(fnName[1]);
+    return idx < 0;
+  })
+}
 
 module.exports = config;

@@ -1,4 +1,5 @@
 var webpackConfig = require('./webpack.config');
+var argv = require('yargs').argv;
 
 // Karma configuration
 // Generated on Sat Jul 02 2016 09:11:30 GMT-0400 (EDT)
@@ -13,6 +14,7 @@ module.exports = function(config) {
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
     frameworks: ['mocha', 'chai'],
+    singleRun: !argv.watch,
     plugins: [
       'karma-mocha',
       'karma-chai',
@@ -22,9 +24,9 @@ module.exports = function(config) {
       'karma-sourcemap-loader'
     ],
     webpack: webpackConfig,
-     webpackServer: {
-       noInfo: true
-     },
+    webpackServer: {
+      noInfo: true
+    },
 
     // list of files / patterns to load in the browser
     files: [
