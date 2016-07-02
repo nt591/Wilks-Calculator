@@ -1,15 +1,25 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
+import { Router } from 'react-router'
 import ReactDOM from 'react-dom'
 import styles from './styles.module.css'
-import 'font-awesome/css/font-awesome.css'
 
 const App = React.createClass({
-  render: function() {
+  propTypes: {
+    routes: PropTypes.object.isRequired,
+    history: PropTypes.object.isRequired
+  },
+
+  content() {
+    return(
+      <Router routes={this.props.routes} 
+              history={this.props.history}/>
+    )
+  },
+
+  render() {
     return (
       <div className={styles.wrapper}>
-        <h1>
-          <i className="fa fa-star"></i>
-          Environment: {__NODE_ENV__}</h1>
+        {this.content()}
       </div>
     )
   }
