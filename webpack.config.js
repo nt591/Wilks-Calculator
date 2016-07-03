@@ -105,4 +105,12 @@ if (isTest) {
   })
 }
 
+config.resolve.root = [src, modules]
+config.resolve.alias = {
+  'css': join(src, 'styles'),
+  'containers': join(src, 'containers'),
+  'components': join(src, 'components'),
+  'utils': join(src, 'utils')
+}
+
 module.exports = config;

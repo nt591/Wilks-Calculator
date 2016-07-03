@@ -1,0 +1,27 @@
+.topbar {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  background: rgb(230, 47, 52);
+  width: 100%;
+  padding: 0 25px;
+  height: 80px;
+  line-height: 80px;
+  color: rgb(239, 239, 239);
+
+  a {
+    color: rgb(239, 239, 239);
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1px;
+    line-height: 40px;
+    h1 { font-size: 28px; }
+  }
+  
+  section {
+    position: absolute;
+    top: 0px;
+    right: 60px;
+  }
+}
