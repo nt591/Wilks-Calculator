@@ -63,6 +63,7 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "font-awesome": "^4.6.3",
+    "ramda": "^0.21.0",
     "react": "^15.2.0",
     "react-dom": "^15.2.0",
     "react-router": "^2.5.2"

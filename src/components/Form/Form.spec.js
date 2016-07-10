@@ -19,7 +19,4 @@ describe('<Form />', () => {
     expect(wrapper.find("option"))
       .to.have.length(2) 
   })
-
-  // These show up as pending tests
-  it('contains a section menu with the title')
 })
