@@ -20,14 +20,14 @@ function WilksCalculator (gender, bodyweight, total) {
   return calculateScoreFromTotal(coefficients, bodyweight, total)
 }
 
-function getCoefficientsFromGender (gender) {
+export function getCoefficientsFromGender (gender) {
   if (gender !== "male" && gender !== "female") {
     throw new Error("unknown gender for Wilks score")
   }
   return Coefficients[gender]
 }
 
-function calculateScoreFromTotal ({a, b, c, d, e, f}, bodyweight, total) {
+export function calculateScoreFromTotal ({a, b, c, d, e, f}, bodyweight, total) {
   const numerator = 500
   const denominator = R.sum([ 
     a, 
