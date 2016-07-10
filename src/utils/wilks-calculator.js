@@ -27,8 +27,7 @@ function getCoefficientsFromGender (gender) {
   return Coefficients[gender]
 }
 
-function calculateScoreFromTotal (coefficients, bodyweight, total) {
-  const {a, b, c, d, e, f} = coefficients
+function calculateScoreFromTotal ({a, b, c, d, e, f}, bodyweight, total) {
   const numerator = 500
   const denominator = R.sum([ 
     a, 
