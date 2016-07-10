@@ -39,6 +39,6 @@ function calculateScoreFromTotal (coefficients, bodyweight, total) {
     f * Math.pow(bodyweight, 5)
   ])
   const wilksCoefficient = numerator / denominator
-  return parseFloat((wilksCoefficient * total).toFixed(2))
+  return (wilksCoefficient * total * 1e2) / 1e2
 }
 export default WilksCalculator
