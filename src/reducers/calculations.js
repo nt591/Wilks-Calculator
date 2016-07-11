@@ -1,12 +1,12 @@
-import {ADD_CALCULATIONS} from "../actions"
+import {ADD_WILKS} from "../actions"
 
-function calculations(state, action) {
+export function wilksCalculations(state, action) {
   switch (action.type) {
-    case ADD_CALCULATIONS:
-      const previousCalculations = (state.previousCalculations || [])
+    case ADD_WILKS:
+      const previousWilks = (state.previousWilks || [])
       const {gender, bodyweight, total, wilks} = action
       return Object.assign({}, state, {
-        previousCalculations: previousCalculations.concat(
+        previousWilks: previousWilks.concat(
           { gender, 
             bodyweight, 
             total, 
