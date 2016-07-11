@@ -54,6 +54,7 @@
     "postcss-loader": "^0.9.1",
     "precss": "^1.4.0",
     "react-addons-test-utils": "^15.2.0",
+    "redux-devtools": "^3.3.1",
     "sinon": "^1.17.4",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
@@ -66,6 +67,9 @@
     "ramda": "^0.21.0",
     "react": "^15.2.0",
     "react-dom": "^15.2.0",
-    "react-router": "^2.5.2"
+    "react-redux": "^4.4.5",
+    "react-router": "^2.5.2",
+    "redux": "^3.5.2",
+    "redux-logger": "^2.6.1"
   }
 }

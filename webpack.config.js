@@ -110,6 +110,8 @@ config.resolve.alias = {
   'css': join(src, 'styles'),
   'containers': join(src, 'containers'),
   'components': join(src, 'components'),
+  'reducers': join(src, 'reducers'),
+  'actions': join(src, 'actions'),
   'utils': join(src, 'utils')
 }
 
