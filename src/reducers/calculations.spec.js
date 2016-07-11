@@ -23,7 +23,7 @@ describe("wilksCalculations()", () => {
 
   it("should have a default case", () => {
     const state = {}
-    expect(wilksCalculations(state, {type: "NEVER_GONNA_HAPPEN"})).
-      to.equal(state)
+    expect(wilksCalculations(state, {type: "NEVER_GONNA_HAPPEN"}))
+      .to.equal(state)
   })
 })
