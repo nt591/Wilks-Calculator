@@ -3,7 +3,7 @@ import {wilksCalculations} from "reducers/calculations"
 import {ADD_WILKS} from "actions/index.js"
 
 describe("wilksCalculations()", () => {
-  it("adds a wilks score to the store", () => {
+  it("adds a wilks score to the store with ADD_WILKS", () => {
     const stats = {
       gender: "female",
       wilks: 400.06,
@@ -19,5 +19,11 @@ describe("wilksCalculations()", () => {
           ]
         }
       )
+  })
+
+  it("should have a default case", () => {
+    const state = {}
+    expect(wilksCalculations(state, {type: "NEVER_GONNA_HAPPEN"})).
+      to.equal(state)
   })
 })
